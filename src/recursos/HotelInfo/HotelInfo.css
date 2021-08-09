@@ -1,0 +1,120 @@
+.contenedor-section-hotel {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-HotelInfo {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 800px;
+  margin: 80px 10px;
+  border: 1px rgb(177, 177, 177) solid;
+  border-radius: 2px;
+}
+
+.img {
+  height: 100px;
+}
+
+.info-general {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+}
+
+.name {
+  margin: 17px 0px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.info-fechas {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin:5px 0px;
+  padding-left: 10px;
+  background-color: rgb(1, 208, 177);
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+}
+
+.info {
+  font-size: 15px;
+  margin: 20px 0px 0px 0px;
+
+}
+
+.rectangulos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  
+}
+
+.country,
+.habitaciones,
+.precio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.habitaciones {
+  margin-bottom: 20px;
+}
+
+.svg {
+  width: 20px;
+  height: 20px;
+  padding: 16px 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f9bed;
+  color: white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.texto-rectangulo {
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin: 0px;
+  padding: 0px 10px;
+  font-size: 14px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: rgb(244, 244, 244);
+  color: rgb(63, 63, 63);
+}
+
+.precio .svg {
+  border-radius: 3px;
+}
+
+.boton {
+  margin-top: auto;
+}
+
+.boton-reserva {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  text-align: center;
+  color: white;
+  border-top: 1px rgb(177, 177, 177) solid;
+  background-color: rgb(1, 208, 177);
+  font-size: 19px;
+  cursor: pointer;
+}

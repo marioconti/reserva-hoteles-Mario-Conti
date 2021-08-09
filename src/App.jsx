@@ -1,14 +1,15 @@
 import React from "react";
 import "./App.css";
-import HotelInfo from "./recursos/HotelInfo";
-
+import { ListadoHoteles } from "./recursos/HotelInfo/HotelInfo";
+import { Header } from "./recursos/Header/Header";
+import { Filtros } from "./recursos/Filtros/Filtros";
 
 function App() {
   return (
     <div className="App">
-      <>
-        <HotelInfo />
-      </>
+      <Header />
+      <Filtros />
+      <ListadoHoteles />
     </div>
   );
 }

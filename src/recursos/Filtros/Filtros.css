@@ -1,0 +1,13 @@
+.contenedor-filtros {
+  width: 90%;
+  height: auto;
+  background-color: #1f9bed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  margin: 20px 20px;
+}

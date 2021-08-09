@@ -1,0 +1,12 @@
+.contenedor-Header {
+  width: 90%;
+  height: 160px;
+  display: flex;
+  background-color: rgb(1, 208, 177);
+  color: white;
+}
+
+.titulo-section{
+  margin:auto 5rem;
+    font-size: 2em;
+}
