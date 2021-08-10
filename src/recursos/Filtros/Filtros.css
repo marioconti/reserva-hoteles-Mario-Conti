@@ -1,3 +1,4 @@
+/* Contenedor de los filtro */
 .contenedor-filtros {
   width: 90%;
   height: auto;
@@ -7,7 +8,9 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
+/* =========================================================== */
+/* Filtros */
 .filtro {
   margin: 20px 20px;
 }
+/* =========================================================== */

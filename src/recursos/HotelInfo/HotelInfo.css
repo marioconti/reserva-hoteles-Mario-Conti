@@ -1,3 +1,4 @@
+/* Contenedor principal de la sección que contiene las cards*/
 .contenedor-section-hotel {
   width: 100%;
   display: flex;
@@ -5,7 +6,8 @@
   align-items: center;
   justify-content: center;
 }
-
+/* =========================================================== */
+/* Contenedor de las cards */
 .contenedor-HotelInfo {
   display: flex;
   flex-direction: column;
@@ -15,23 +17,27 @@
   border: 1px rgb(177, 177, 177) solid;
   border-radius: 2px;
 }
-
+/* =========================================================== */
+/* Imagenes */
 .img {
   height: 100px;
 }
-
+/* =========================================================== */
+/* Div contenedor de la info (titulo,descripcion,etc.)*/
 .info-general {
   display: flex;
   flex-direction: column;
   margin: 10px 20px;
 }
-
+/* =========================================================== */
+/* Nombre del hotel */
 .name {
   margin: 17px 0px;
   font-weight: bold;
   font-size: 22px;
 }
-
+/* =========================================================== */
+/* Fechas desde y hasta disponible */
 .info-fechas {
   display: flex;
   align-items: center;
@@ -43,18 +49,21 @@
   color: white;
   font-size: 14px;
 }
-
+/* =========================================================== */
+/* Descripcion del hotel */
 .info {
   font-size: 15px;
   margin: 20px 0px 0px 0px;
 }
-
+/* =========================================================== */
+/* Contenedores de informacion de lugar, habitaciones y precios */
 .rectangulos {
   display: flex;
   flex-wrap: wrap;
   margin-top: auto;
 }
-
+/* =========================================================== */
+/* Cada rectangulo con la info */
 .country,
 .habitaciones,
 .precio {
@@ -62,11 +71,13 @@
   flex-wrap: wrap;
   margin-top: 20px;
 }
-
+/* =========================================================== */
+/* Div de habitaciones */
 .habitaciones {
   margin-bottom: 20px;
 }
-
+/* =========================================================== */
+/* SVGs */
 .svg {
   width: 20px;
   height: 20px;
@@ -80,7 +91,8 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-
+/* =========================================================== */
+/* texto de va dentro de los divs con info */
 .texto-rectangulo {
   display: flex;
   width: auto;
@@ -95,20 +107,22 @@
   background-color: rgb(244, 244, 244);
   color: rgb(63, 63, 63);
 }
-
+/* =========================================================== */
+/* contenedor SVGs de precios */
 .precio .svg {
   border-radius: 3px;
   width: auto;
 }
-
+/* =========================================================== */
+/* SVG de precios */
 .precio .svg svg {
   margin-right: 3px;
 }
-
+/* =========================================================== */
+/* Boton de reserva */
 .boton {
   margin-top: auto;
 }
-
 .boton-reserva {
   display: flex;
   align-items: center;
@@ -121,3 +135,4 @@
   font-size: 19px;
   cursor: pointer;
 }
+/* =========================================================== */

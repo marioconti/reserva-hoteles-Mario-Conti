@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
   font-family: "Roboto", sans-serif;
 }
-
+/* Contenedor principal de la App */
 .App {
   width: 100%;
   display: flex;
@@ -18,3 +18,4 @@ html {
   justify-content: center;
   align-items: center;
 }
+/* =========================================================== */

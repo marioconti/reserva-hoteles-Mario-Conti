@@ -2,6 +2,8 @@ import React from "react";
 // import { hotelsData } from "../arrayhoteles";
 import "./Header.css";
 
+
+// Componente Header
 export const Header = () => {
   return (
     <div className="contenedor-Header">
@@ -12,3 +14,4 @@ export const Header = () => {
     
   );
 };
+/* =========================================================== */

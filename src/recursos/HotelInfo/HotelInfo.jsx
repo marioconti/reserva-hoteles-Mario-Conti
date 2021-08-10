@@ -24,8 +24,9 @@ export const ListadoHoteles = () => {
   });
   return <div className="contenedor-section-hotel">{lista}</div>;
 };
+// ===========================================================
 
-// Esta función será la card genérica que tendrá el html y css y recibirá por props la info de los hoteles
+// Esta función es la card genérica que tiene el html y recibirá por props la info de los hoteles
 export const HotelInfo = (props) => {
   let fechaDesdeUnix = props.desde;
   // Desde
@@ -33,15 +34,16 @@ export const HotelInfo = (props) => {
   let nombreDiaDesde = new Date(fechaDesdeUnix).getDay();
   let nombreMesDesde = new Date(fechaDesdeUnix).getMonth();
   let nombreAñoDesde = new Date(fechaDesdeUnix).getFullYear();
-  // Desde
+  // ===========================================================
   // Hasta
   let fechaHastaUnix = props.hasta;
   let diaHasta = new Date(fechaHastaUnix).getDate();
   let nombreDiaHasta = new Date(fechaHastaUnix).getDay();
   let nombreMesHasta = new Date(fechaHastaUnix).getMonth();
   let nombreAñoHasta = new Date(fechaHastaUnix).getFullYear();
-  // Hasta
+  // ===========================================================
 
+  // esta funcion devuelve los signos $$$
   function mostrarPrice() {
     let signoPesos = <i class="fas fa-dollar-sign"></i>;
     let arrayPesos = [];
@@ -50,7 +52,9 @@ export const HotelInfo = (props) => {
     }
     return arrayPesos;
   }
-  // esta función genérica recupera el valor del numero del día y devuelve el nombre
+  // ===========================================================
+
+  // esta función genérica recupera el valor del numero del día por un lado, y mes por otro y devuelve el nombre
   const nombreDia = (e) => {
     if (e === 0) {
       return "Domingo";
@@ -68,6 +72,7 @@ export const HotelInfo = (props) => {
       return "Sábado";
     }
   };
+  // ===========================================================
   const nombreMes = (e) => {
     if (e === 0) {
       return "Enero";
@@ -95,7 +100,9 @@ export const HotelInfo = (props) => {
       return "Diciembre";
     }
   };
+  // ===========================================================
 
+  // Aquí se hace el return, lo que devuelve nuestra fx.
   return (
     <div className="contenedor-HotelInfo">
       <img className="imagen-hotel" src={props.photo} alt="imagen hotel" />
@@ -121,7 +128,6 @@ export const HotelInfo = (props) => {
             {props.country}, {props.city}
           </p>
         </div>
-
         <div className="habitaciones">
           <div className="svg">
             <i class="fas fa-bed"></i>
@@ -139,3 +145,4 @@ export const HotelInfo = (props) => {
     </div>
   );
 };
+// ===========================================================

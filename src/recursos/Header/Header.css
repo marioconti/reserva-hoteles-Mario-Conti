@@ -1,3 +1,4 @@
+/* Contenedor del Header */
 .contenedor-Header {
   width: 90%;
   height: 160px;
@@ -5,8 +6,10 @@
   background-color: rgb(1, 208, 177);
   color: white;
 }
-
+/* =========================================================== */
+/* Titulo del header */
 .titulo-section{
   margin:auto 5rem;
     font-size: 2em;
 }
+/* =========================================================== */
