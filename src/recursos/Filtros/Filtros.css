@@ -10,7 +10,17 @@
 }
 /* =========================================================== */
 /* Filtros */
-.filtro {
-  margin: 20px 20px;
+.filtros {
+  margin: 20px;
+}
+/* =========================================================== */
+
+/* Filtros por pais*/
+.filtrosPorPais {
+  padding: 6px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+  color: rgb(31, 30, 30);
 }
 /* =========================================================== */
