@@ -1,29 +1,22 @@
-import React from "react";
-// import { hotelsData } from "../arrayhoteles";
+import { React } from "react";
+import {
+  FiltroPais,
+  FiltroPrecio,
+  FiltroTamanio,
+  FiltroFechaDesde,
+  FiltroFechaHasta,
+} from "./Resultados";
 import "./Filtros.css";
-import App from "../../App";
 
 // Componente de los Filtros
 export const Filtros = () => {
   return (
     <div className="contenedor-filtros">
+      <FiltroFechaDesde />
+      <FiltroFechaHasta />
       <FiltroPais />
-    </div>
-  );
-};
-/* =========================================================== */
-
-// Filtro por Pais
-export const FiltroPais = () => {
-  return (
-    <div className="filtros">
-      <select className="filtrosPorPais" name="Todos" id="">
-        <option value="Todos">Todos los hoteles</option>
-        <option value="Argentina">Argentina</option>
-        <option value="Brasil">Brasil</option>
-        <option value="Chile">Chile</option>
-        <option value="Uruguay">Uruguay</option>
-      </select>
+      <FiltroPrecio />
+      <FiltroTamanio />
     </div>
   );
 };

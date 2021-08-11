@@ -2,7 +2,6 @@ import React from "react";
 // import { hotelsData } from "../arrayhoteles";
 import "./Header.css";
 
-
 // Componente Header
 export const Header = () => {
   return (
@@ -11,7 +10,6 @@ export const Header = () => {
       <p className="resultadoBusqueda"></p>
       {/* TODO: hacer funcion para llamar el resultado de los filtros */}
     </div>
-    
   );
 };
 /* =========================================================== */
