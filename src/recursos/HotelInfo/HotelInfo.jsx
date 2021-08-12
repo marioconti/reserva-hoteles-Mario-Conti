@@ -2,7 +2,7 @@ import React from "react";
 import { hotelsData } from "../arrayhoteles";
 import "./HotelInfo.css";
 
-// Esta función es la que hara la instanciación dinámica de las card con HOTEL INFO
+// Esta función es la que realiza la instanciación dinámica de las card con HotelInfo
 // Componente
 export const ListadoHoteles = () => {
   let lista = hotelsData.map((e) => {
