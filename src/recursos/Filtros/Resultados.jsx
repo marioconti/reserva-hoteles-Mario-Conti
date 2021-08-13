@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import "./Filtros.css";
+import { Filtros } from "./Filtros";
 
 export const FiltroFechaDesde = () => {
   let [fechaDesde, setFechaDesde] = useState("");
@@ -50,8 +51,9 @@ export const FiltroFechaHasta = () => {
 /* =========================================================== */
 
 // Filtro por Pais
-export const FiltroPais = () => {
-  const [country, setCountry] = useState("Todos");
+export const FiltroPais = (props) => {
+  <Filtros country={props.country} setCountry={props.setCountry} />;
+  // const [country, setCountry] = useState("Todos");
   // Manejar el cambio de un select
   // Fx que recibe evento/cambio de estado
   const handleSelect = (evento) => {
@@ -59,13 +61,13 @@ export const FiltroPais = () => {
     // este objeto evento tiene la información sobre el elemento que se ejecuta
     // este se ejecuta cuando hay un cambio en el select
     const paisSeleccionado = evento.target.value;
-    setCountry(paisSeleccionado);
+    props.setCountry(paisSeleccionado);
   };
 
   return (
     <div className="filtros">
       <select
-        value={country}
+        value={props.country}
         onChange={handleSelect}
         className="filtrosPorPais"
         name="Todos"
@@ -136,4 +138,3 @@ export const FiltroTamanio = () => {
   );
 };
 /* =========================================================== */
-// Filtro por Tamaño

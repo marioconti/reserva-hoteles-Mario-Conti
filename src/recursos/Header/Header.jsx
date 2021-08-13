@@ -1,6 +1,7 @@
 import React from "react";
 // import { hotelsData } from "../arrayhoteles";
 import "./Header.css";
+// import { Filtros } from "../Filtros/Filtros";
 
 // Componente Header
 export const Header = () => {

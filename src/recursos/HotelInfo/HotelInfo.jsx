@@ -102,7 +102,7 @@ export const HotelInfo = (props) => {
   };
   // ===========================================================
 
-  // Aquí se hace el return, lo que devuelve nuestra fx.
+  // Aquí se hace el return, lo que devuelve nuestra fx. El HTML de la card
   return (
     <div className="contenedor-HotelInfo">
       <img className="imagen-hotel" src={props.photo} alt="imagen hotel" />

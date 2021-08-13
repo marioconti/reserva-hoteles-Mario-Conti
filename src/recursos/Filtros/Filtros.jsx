@@ -6,15 +6,17 @@ import {
   FiltroFechaDesde,
   FiltroFechaHasta,
 } from "./Resultados";
+import { Container } from "../container/Container";
 import "./Filtros.css";
 
 // Componente de los Filtros
-export const Filtros = () => {
+export const Filtros = (props) => {
+  <Container country={props.country} setCountry={props.setCountry} />;
   return (
     <div className="contenedor-filtros">
       <FiltroFechaDesde />
       <FiltroFechaHasta />
-      <FiltroPais />
+      <FiltroPais country={props.country} setCountry={props.setCountry} />
       <FiltroPrecio />
       <FiltroTamanio />
     </div>
