@@ -132,4 +132,8 @@
   font-size: 19px;
   cursor: pointer;
 }
+
+.boton-reserva:hover {
+  background-color: rgb(0, 170, 145);
+}
 /* =========================================================== */
