@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import "./Filtros.css";
-import { Filtros } from "./Filtros";
+
 
 export const FiltroFechaDesde = () => {
   let [fechaDesde, setFechaDesde] = useState("");
@@ -52,8 +52,6 @@ export const FiltroFechaHasta = () => {
 
 // Filtro por Pais
 export const FiltroPais = (props) => {
-  <Filtros country={props.country} setCountry={props.setCountry} />;
-  // const [country, setCountry] = useState("Todos");
   // Manejar el cambio de un select
   // Fx que recibe evento/cambio de estado
   const handleSelect = (evento) => {

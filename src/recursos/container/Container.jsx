@@ -8,7 +8,7 @@ export function Container() {
 
   return (
     <div className="App">
-      <Header />
+      <Header country={country} setCountry={setCountry}/>
       <Filtros country={country} setCountry={setCountry} />
       <ListadoHoteles />
     </div>
