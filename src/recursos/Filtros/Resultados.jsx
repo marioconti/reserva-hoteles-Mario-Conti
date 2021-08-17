@@ -1,20 +1,17 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "./Filtros.css";
 
-
-export const FiltroFechaDesde = () => {
-  let [fechaDesde, setFechaDesde] = useState("");
-
+export const FiltroFechaDesde = (props) => {
   const handleSelect = (evento) => {
-    // const tiempoUNIX = new Date(evento.target.value);
+    // const tiempoUNIX = new Date(evento.target.value)
     const FechaDesdeSeleccionada = evento.target.value;
-    setFechaDesde(FechaDesdeSeleccionada);
+    props.setFechaDesde(FechaDesdeSeleccionada);
   };
 
   return (
     <div className="filtros">
       <input
-        value={fechaDesde}
+        value={props.fechaDesde}
         onChange={handleSelect}
         className="filtrosPorTamanio"
         name=""
@@ -26,19 +23,17 @@ export const FiltroFechaDesde = () => {
 };
 /* =========================================================== */
 // Filtro por Hasta
-export const FiltroFechaHasta = () => {
-  let [fechaHasta, setFechaHasta] = useState("");
-
+export const FiltroFechaHasta = (props) => {
   const handleSelect = (evento) => {
     // const tiempoUNIX = new Date(evento.target.value);
     const FechaHastaSeleccionada = evento.target.value;
-    setFechaHasta(FechaHastaSeleccionada);
+    props.setFechaHasta(FechaHastaSeleccionada);
   };
 
   return (
     <div className="filtros">
       <input
-        value={fechaHasta}
+        value={props.fechaHasta}
         onChange={handleSelect}
         className="filtrosPorTamanio"
         name=""
@@ -62,6 +57,7 @@ export const FiltroPais = (props) => {
     props.setCountry(paisSeleccionado);
   };
 
+
   return (
     <div className="filtros">
       <select
@@ -79,21 +75,21 @@ export const FiltroPais = (props) => {
       </select>
     </div>
   );
+  
+   
 };
 
 // Filtro por Pais
-export const FiltroPrecio = () => {
-  const [price, setPrice] = useState("Todos");
-
+export const FiltroPrecio = (props) => {
   const handleSelect = (evento) => {
     const precioSeleccionado = evento.target.value;
-    setPrice(precioSeleccionado);
+    props.setPrice(precioSeleccionado);
   };
 
   return (
     <div className="filtros">
       <select
-        value={price}
+        value={props.price}
         onChange={handleSelect}
         className="filtrosPorPrecio"
         name="Todos"
@@ -110,25 +106,23 @@ export const FiltroPrecio = () => {
 };
 /* =========================================================== */
 // Filtro por Tamaño
-export const FiltroTamanio = () => {
-  const [tamanio, setTamanio] = useState("Todos");
-
+export const FiltroTamanio = (props) => {
   const handleSelect = (evento) => {
     const tamanioSeleccionado = evento.target.value;
-    setTamanio(tamanioSeleccionado);
+    props.setTamanio(tamanioSeleccionado);
   };
 
   return (
     <div className="filtros">
       <select
-        value={tamanio}
+        value={props.tamanio}
         onChange={handleSelect}
         className="filtrosPorTamanio"
         name="Todos"
         id=""
       >
         <option value="todos">Tamaños</option>
-        <option value="pequenio">Pequeño</option>
+        <option value="pequeño">Pequeño</option>
         <option value="mediano">Mediano</option>
         <option value="grande">Grande</option>
       </select>

@@ -12,11 +12,18 @@ import "./Filtros.css";
 export const Filtros = (props) => {
   return (
     <div className="contenedor-filtros">
-      <FiltroFechaDesde />
-      <FiltroFechaHasta />
+      <FiltroFechaDesde
+        fechaDesde={props.fechaDesde}
+        setFechaDesde={props.setFechaDesde}
+      />
+      <FiltroFechaHasta
+        fechaHasta={props.fechaHasta}
+        setFechaHasta={props.setFechaHasta}
+      />
       <FiltroPais country={props.country} setCountry={props.setCountry} />
-      <FiltroPrecio />
-      <FiltroTamanio />
+      <FiltroPrecio price={props.price} setPrice={props.setPrice} />
+      <FiltroTamanio tamanio={props.tamanio} setTamanio={props.setTamanio} />
+      <div className="botonLimpiar">Limpiar</div>
     </div>
   );
 };

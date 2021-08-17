@@ -16,10 +16,22 @@
 /* =========================================================== */
 
 /* Filtros por pais*/
-.filtrosPorPais, .filtrosPorPrecio, .filtrosPorTamanio {
+.filtrosPorPais,
+.filtrosPorPrecio,
+.filtrosPorTamanio,
+.botonLimpiar {
   padding: 6px 20px;
   font-size: 16px;
   border-radius: 5px;
   color: rgb(31, 30, 30);
+}
+/* =========================================================== */
+/* Botón limpiar */
+.botonLimpiar {
+  background-color: rgb(255, 137, 27);
+  cursor: pointer;
+}
+.botonLimpiar:hover{
+  background-color: rgb(241, 134, 34);
 }
 /* =========================================================== */
