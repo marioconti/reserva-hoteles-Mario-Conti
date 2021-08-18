@@ -4,26 +4,41 @@ import "./HotelInfo.css";
 
 // Esta función es la que realiza la instanciación dinámica de las card con HotelInfo
 // Componente
-export const ListadoHoteles = (props) => {
-  let lista = hotelsData.map((hotel) => {
-    return (
-      <>
+
+export function Renderizado (props) {
+  const lista = hotelsData.map((e) => {
+    if (e.country === props.country) {
+      return (
         <HotelInfo
-          name={hotel.name}
-          photo={hotel.photo}
-          description={hotel.description}
-          desde={hotel.availabilityFrom}
-          hasta={hotel.availabilityTo}
-          city={hotel.city}
-          country={hotel.country}
-          rooms={hotel.rooms}
-          price={hotel.price}
+          name={e.name}
+          photo={e.photo}
+          description={e.description}
+          desde={e.availabilityFrom}
+          hasta={e.availabilityTo}
+          city={e.city}
+          country={e.country}
+          rooms={e.rooms}
+          price={e.price}
         />
-      </>
-    );
+      );
+    } else if (props.country === "Todos") {
+      return (
+        <HotelInfo
+          name={e.name}
+          photo={e.photo}
+          description={e.description}
+          desde={e.availabilityFrom}
+          hasta={e.availabilityTo}
+          city={e.city}
+          country={e.country}
+          rooms={e.rooms}
+          price={e.price}
+        />
+      );
+    }
   });
   return <div className="contenedor-section-hotel">{lista}</div>;
-};
+}
 // ===========================================================
 
 // filtrar los hoteles por un pais

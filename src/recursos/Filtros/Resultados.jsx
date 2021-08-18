@@ -1,19 +1,22 @@
 import { React } from "react";
 import "./Filtros.css";
 
+/* =========================================================== */
+// Filtro por Desde
 export const FiltroFechaDesde = (props) => {
   const handleSelect = (evento) => {
     // const tiempoUNIX = new Date(evento.target.value)
-    const FechaDesdeSeleccionada = evento.target.value;
-    props.setFechaDesde(FechaDesdeSeleccionada);
+    const fechaDesdeSeleccionada = evento.target.value;
+    // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
+    // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
+    props.setFechaDesde(fechaDesdeSeleccionada);
   };
-
   return (
     <div className="filtros">
       <input
         value={props.fechaDesde}
         onChange={handleSelect}
-        className="filtrosPorTamanio"
+        className="filtrosFechaDesde"
         name=""
         type="date"
         id=""
@@ -25,17 +28,17 @@ export const FiltroFechaDesde = (props) => {
 // Filtro por Hasta
 export const FiltroFechaHasta = (props) => {
   const handleSelect = (evento) => {
-    // const tiempoUNIX = new Date(evento.target.value);
-    const FechaHastaSeleccionada = evento.target.value;
-    props.setFechaHasta(FechaHastaSeleccionada);
+    const fechaHastaSeleccionada = evento.target.value;
+    // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
+    // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
+    props.setFechaHasta(fechaHastaSeleccionada);
   };
-
   return (
     <div className="filtros">
       <input
         value={props.fechaHasta}
         onChange={handleSelect}
-        className="filtrosPorTamanio"
+        className="filtrosFechaHasta"
         name=""
         type="date"
         id=""
@@ -44,7 +47,6 @@ export const FiltroFechaHasta = (props) => {
   );
 };
 /* =========================================================== */
-
 // Filtro por Pais
 export const FiltroPais = (props) => {
   // Manejar el cambio de un select
@@ -56,8 +58,6 @@ export const FiltroPais = (props) => {
     const paisSeleccionado = evento.target.value;
     props.setCountry(paisSeleccionado);
   };
-
-
   return (
     <div className="filtros">
       <select
@@ -75,11 +75,9 @@ export const FiltroPais = (props) => {
       </select>
     </div>
   );
-  
-   
 };
-
-// Filtro por Pais
+/* =========================================================== */
+// Filtro por Precio
 export const FiltroPrecio = (props) => {
   const handleSelect = (evento) => {
     const precioSeleccionado = evento.target.value;

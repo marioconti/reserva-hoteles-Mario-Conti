@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { ListadoHoteles } from "../HotelInfo/HotelInfo";
+import { Renderizado } from "../HotelInfo/HotelInfo";
 import { Header } from "../Header/Header";
 import { Filtros } from "../Filtros/Filtros";
 // este import trae la fecha de hoy exportada como una const del arrayhoteles
@@ -11,7 +11,7 @@ export function Container() {
   const [fechaHasta, setFechaHasta] = useState("");
   const [price, setPrice] = useState("");
   const [tamanio, setTamanio] = useState("");
-   /* =========================================================== */
+  /* =========================================================== */
   return (
     <div className="App">
       <Header
@@ -38,7 +38,18 @@ export function Container() {
         tamanio={tamanio}
         setTamanio={setTamanio}
       />
-      <ListadoHoteles />
+      <Renderizado
+        fechaDesde={fechaDesde}
+        setFechaDesde={setFechaDesde}
+        fechaHasta={fechaHasta}
+        setFechaHasta={setFechaHasta}
+        country={country}
+        setCountry={setCountry}
+        price={price}
+        setPrice={setPrice}
+        tamanio={tamanio}
+        setTamanio={setTamanio}
+      />
     </div>
   );
 }
