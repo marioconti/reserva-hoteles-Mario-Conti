@@ -6,11 +6,11 @@ import { Filtros } from "../Filtros/Filtros";
 
 export function Container() {
   // Declaración de estados globales
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("Todos");
   const [fechaDesde, setFechaDesde] = useState("");
   const [fechaHasta, setFechaHasta] = useState("");
-  const [price, setPrice] = useState("");
-  const [tamanio, setTamanio] = useState("");
+  const [price, setPrice] = useState("Todos");
+  const [tamanio, setTamanio] = useState("Todos");
   /* =========================================================== */
   return (
     <div className="App">

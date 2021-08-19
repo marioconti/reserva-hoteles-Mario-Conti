@@ -94,10 +94,10 @@ export const FiltroPrecio = (props) => {
         id=""
       >
         <option value="Todos">Precio</option>
-        <option value="economico">Económico</option>
-        <option value="confort">Confort</option>
-        <option value="lujos">Lujos</option>
-        <option value="magnifico">Magnífico</option>
+        <option value="1">Económico</option>
+        <option value="2">Confort</option>
+        <option value="3">Lujos</option>
+        <option value="4">Magnífico</option>
       </select>
     </div>
   );

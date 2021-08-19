@@ -4,10 +4,46 @@ import "./HotelInfo.css";
 
 // Esta función es la que realiza la instanciación dinámica de las card con HotelInfo
 // Componente
-
-export function Renderizado (props) {
-  const lista = hotelsData.map((e) => {
-    if (e.country === props.country) {
+// Renderizado filtro por pais
+// export function Renderizado(props) {
+//   const listaPorPais = hotelsData.map((e) => {
+//     if (e.country === props.country) {
+//       return (
+//         <HotelInfo
+//           name={e.name}
+//           photo={e.photo}
+//           description={e.description}
+//           desde={e.availabilityFrom}
+//           hasta={e.availabilityTo}
+//           city={e.city}
+//           country={e.country}
+//           rooms={e.rooms}
+//           price={e.price}
+//         />
+//       );
+//     } else if (props.country === "Todos") {
+//       return (
+//         <HotelInfo
+//           name={e.name}
+//           photo={e.photo}
+//           description={e.description}
+//           desde={e.availabilityFrom}
+//           hasta={e.availabilityTo}
+//           city={e.city}
+//           country={e.country}
+//           rooms={e.rooms}
+//           price={e.price}
+//         />
+//       );
+//     }
+//   });
+//   return <div className="contenedor-section-hotel">{listaPorPais}</div>;
+// }
+// ===========================================================
+// Renderizado filtro por precio
+export function Renderizado(props) {
+  const listaPorPrecio = hotelsData.map((e) => {
+    if (e.price == props.price) {
       return (
         <HotelInfo
           name={e.name}
@@ -21,7 +57,7 @@ export function Renderizado (props) {
           price={e.price}
         />
       );
-    } else if (props.country === "Todos") {
+    } else if (props.price === "Todos") {
       return (
         <HotelInfo
           name={e.name}
@@ -37,8 +73,9 @@ export function Renderizado (props) {
       );
     }
   });
-  return <div className="contenedor-section-hotel">{lista}</div>;
+  return <div className="contenedor-section-hotel">{listaPorPrecio}</div>;
 }
+
 // ===========================================================
 
 // filtrar los hoteles por un pais
@@ -54,20 +91,28 @@ export function Renderizado (props) {
 
 // Esta función es la card genérica que tiene el html y recibirá por props la info de los hoteles
 export const HotelInfo = (props) => {
-  let fechaDesdeUnix = props.desde;
-  // Desde
-  let diaDesde = new Date(fechaDesdeUnix).getDate();
-  let nombreDiaDesde = new Date(fechaDesdeUnix).getDay();
-  let nombreMesDesde = new Date(fechaDesdeUnix).getMonth();
-  let nombreAñoDesde = new Date(fechaDesdeUnix).getFullYear();
-  // ===========================================================
-  // Hasta
-  let fechaHastaUnix = props.hasta;
-  let diaHasta = new Date(fechaHastaUnix).getDate();
-  let nombreDiaHasta = new Date(fechaHastaUnix).getDay();
-  let nombreMesHasta = new Date(fechaHastaUnix).getMonth();
-  let nombreAñoHasta = new Date(fechaHastaUnix).getFullYear();
-  // ===========================================================
+  // let fechaDesdeUnix = props.desde;
+  const fechaDesde = () => {
+    let date = new Date(props.desde);
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return `Desde el ${date.toLocaleDateString(undefined, options)}`;
+  };
+
+  const fechaHasta = () => {
+    let date = new Date(props.hasta);
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return `Hasta el ${date.toLocaleDateString(undefined, options)}`;
+  };
 
   // esta funcion devuelve los signos $$$
   function mostrarPrice() {
@@ -80,54 +125,6 @@ export const HotelInfo = (props) => {
   }
   // ===========================================================
 
-  // esta función genérica recupera el valor del numero del día por un lado, y mes por otro y devuelve el nombre
-  const nombreDia = (e) => {
-    if (e === 0) {
-      return "Domingo";
-    } else if (e === 1) {
-      return "Lunes";
-    } else if (e === 2) {
-      return "Martes";
-    } else if (e === 3) {
-      return "Miércoles";
-    } else if (e === 4) {
-      return "Jueves";
-    } else if (e === 5) {
-      return "Viernes";
-    } else if (e === 6) {
-      return "Sábado";
-    }
-  };
-  // ===========================================================
-  const nombreMes = (e) => {
-    if (e === 0) {
-      return "Enero";
-    } else if (e === 1) {
-      return "Febrero";
-    } else if (e === 2) {
-      return "Marzo";
-    } else if (e === 3) {
-      return "Abril";
-    } else if (e === 4) {
-      return "Mayo";
-    } else if (e === 5) {
-      return "Junio";
-    } else if (e === 6) {
-      return "Julio";
-    } else if (e === 7) {
-      return "Agosto";
-    } else if (e === 8) {
-      return "Septiembre";
-    } else if (e === 9) {
-      return "Octubre";
-    } else if (e === 10) {
-      return "Noviembre";
-    } else if (e === 11) {
-      return "Diciembre";
-    }
-  };
-  // ===========================================================
-
   // Aquí se hace el return, lo que devuelve nuestra fx. El HTML de la card
   return (
     <div className="contenedor-HotelInfo">
@@ -135,14 +132,8 @@ export const HotelInfo = (props) => {
 
       <div className="info-general">
         <p className="name">{props.name}</p>
-        <div className="info-fechas">
-          Desde el {nombreDia(nombreDiaDesde)}, {diaDesde} de{" "}
-          {nombreMes(nombreMesDesde)} de {nombreAñoDesde}
-        </div>
-        <div className="info-fechas">
-          Hasta el {nombreDia(nombreDiaHasta)}, {diaHasta} de{" "}
-          {nombreMes(nombreMesHasta)} de {nombreAñoHasta}
-        </div>
+        <div className="info-fechas"> {fechaDesde()}</div>
+        <div className="info-fechas"> {fechaHasta()}</div>
         <p className="info">{props.description}</p>
       </div>
       <div className="rectangulos">
