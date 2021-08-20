@@ -5,7 +5,7 @@ import "./HotelInfo.css";
 // Esta función es la que realiza la instanciación dinámica de las card con HotelInfo
 // Componente
 // Renderizado filtro por pais
-// export function Renderizado(props) {
+// export function RenderizadoPorPais(props) {
 //   const listaPorPais = hotelsData.map((e) => {
 //     if (e.country === props.country) {
 //       return (
@@ -40,8 +40,19 @@ import "./HotelInfo.css";
 //   return <div className="contenedor-section-hotel">{listaPorPais}</div>;
 // }
 // ===========================================================
+// filtrar los hoteles por un pais (fx javier/Clase)
+// let hotelesFiltrados = [];
+
+// if (props.country === "todos") {
+//   hotelesFiltrados = [...props.hotelsData];
+// } else {
+//   hotelesFiltrados = props.hotelsData.filter((hotel) => {
+//     return hotel.country.toUpperCase() === props.country.toUpperCase();
+//   });
+// }
+// ===========================================================
 // Renderizado filtro por precio
-export function Renderizado(props) {
+export function RenderizadoPorPrecio(props) {
   const listaPorPrecio = hotelsData.map((e) => {
     if (e.price == props.price) {
       return (
@@ -77,18 +88,6 @@ export function Renderizado(props) {
 }
 
 // ===========================================================
-
-// filtrar los hoteles por un pais
-// let hotelesFiltrados = [];
-
-// if (props.country === "todos") {
-//   hotelesFiltrados = [...props.hotelsData];
-// } else {
-//   hotelesFiltrados = props.hotelsData.filter((hotel) => {
-//     return hotel.country.toUpperCase() === props.country.toUpperCase();
-//   });
-// }
-
 // Esta función es la card genérica que tiene el html y recibirá por props la info de los hoteles
 export const HotelInfo = (props) => {
   // let fechaDesdeUnix = props.desde;

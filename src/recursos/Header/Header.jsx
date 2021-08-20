@@ -3,6 +3,7 @@ import "./Header.css";
 
 // Componente Header
 export const Header = (props) => {
+  // Fechas
   let fechaDesdeFiltrada = new Date(props.fechaDesde).toLocaleDateString(
     "es-AR",
     { timeZone: "UTC" }
@@ -12,9 +13,6 @@ export const Header = (props) => {
     { timeZone: "UTC" }
   );
   /* =========================================================== */
-  // FX en el caso de querer que empiece vacio
-  /* =========================================================== */
-
   const mostrarFechaDesde = () => {
     if (fechaDesdeFiltrada === "Invalid Date") {
       return;
@@ -29,9 +27,28 @@ export const Header = (props) => {
       return fechaHastaFiltrada;
     }
   };
-  // Ver como optimizar estas funciones
+  //TODO: Ver como optimizar estas funciones
 
   /* =========================================================== */
+
+  /* =========================================================== */
+  // Precio
+  const nombrePrecio = () => {
+    let nombreDePrecio;
+    if (props.price === "1") {
+      nombreDePrecio = "Económico";
+    } else if (props.price === "2") {
+      nombreDePrecio = "Confort";
+    } else if (props.price === "3") {
+      nombreDePrecio = "Lujoso";
+    } else if (props.price === "4") {
+      nombreDePrecio = "Magnífico";
+    } else {
+      nombreDePrecio = "Todos";
+    }
+    return nombreDePrecio.toUpperCase();
+  };
+
   return (
     <div className="contenedor-Header">
       <p className="titulo-section">Hotelandia</p>
@@ -41,7 +58,7 @@ export const Header = (props) => {
         <p className="resultadoBusqueda">
           Destino: {props.country.toUpperCase()}
         </p>
-        <p className="resultadoBusqueda">Precio: {props.price.toUpperCase()}</p>
+        <p className="resultadoBusqueda">Precio: {nombrePrecio()}</p>
         <p className="resultadoBusqueda">
           Tamaño: {props.tamanio.toUpperCase()}
         </p>
