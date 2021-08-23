@@ -49,12 +49,7 @@ export const FiltroFechaHasta = (props) => {
 /* =========================================================== */
 // Filtro por Pais
 export const FiltroPais = (props) => {
-  // Manejar el cambio de un select
-  // Fx que recibe evento/cambio de estado
   const handleSelect = (evento) => {
-    // como todo evento de etiqueta, el handle select recibe un objeto evento
-    // este objeto evento tiene la información sobre el elemento que se ejecuta
-    // este se ejecuta cuando hay un cambio en el select
     const paisSeleccionado = evento.target.value;
     props.setCountry(paisSeleccionado);
   };
@@ -94,10 +89,10 @@ export const FiltroPrecio = (props) => {
         id=""
       >
         <option value="Todos">Precio</option>
-        <option value="1">Económico</option>
-        <option value="2">Confort</option>
-        <option value="3">Lujos</option>
-        <option value="4">Magnífico</option>
+        <option value="1">$</option>
+        <option value="2">$$</option>
+        <option value="3">$$$</option>
+        <option value="4">$$$$</option>
       </select>
     </div>
   );

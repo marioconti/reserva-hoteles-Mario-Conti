@@ -2,89 +2,30 @@ import React from "react";
 import { hotelsData } from "../arrayhoteles";
 import "./HotelInfo.css";
 
-// Esta función es la que realiza la instanciación dinámica de las card con HotelInfo
-// Componente
-// Renderizado filtro por pais
-// export function RenderizadoPorPais(props) {
-//   const listaPorPais = hotelsData.map((e) => {
-//     if (e.country === props.country) {
-//       return (
-//         <HotelInfo
-//           name={e.name}
-//           photo={e.photo}
-//           description={e.description}
-//           desde={e.availabilityFrom}
-//           hasta={e.availabilityTo}
-//           city={e.city}
-//           country={e.country}
-//           rooms={e.rooms}
-//           price={e.price}
-//         />
-//       );
-//     } else if (props.country === "Todos") {
-//       return (
-//         <HotelInfo
-//           name={e.name}
-//           photo={e.photo}
-//           description={e.description}
-//           desde={e.availabilityFrom}
-//           hasta={e.availabilityTo}
-//           city={e.city}
-//           country={e.country}
-//           rooms={e.rooms}
-//           price={e.price}
-//         />
-//       );
-//     }
-//   });
-//   return <div className="contenedor-section-hotel">{listaPorPais}</div>;
-// }
-// ===========================================================
-// filtrar los hoteles por un pais (fx javier/Clase)
-// let hotelesFiltrados = [];
-
-// if (props.country === "todos") {
-//   hotelesFiltrados = [...props.hotelsData];
-// } else {
-//   hotelesFiltrados = props.hotelsData.filter((hotel) => {
-//     return hotel.country.toUpperCase() === props.country.toUpperCase();
-//   });
-// }
-// ===========================================================
-// Renderizado filtro por precio
-export function RenderizadoPorPrecio(props) {
-  const listaPorPrecio = hotelsData.map((e) => {
-    if (e.price == props.price) {
-      return (
-        <HotelInfo
-          name={e.name}
-          photo={e.photo}
-          description={e.description}
-          desde={e.availabilityFrom}
-          hasta={e.availabilityTo}
-          city={e.city}
-          country={e.country}
-          rooms={e.rooms}
-          price={e.price}
-        />
-      );
-    } else if (props.price === "Todos") {
-      return (
-        <HotelInfo
-          name={e.name}
-          photo={e.photo}
-          description={e.description}
-          desde={e.availabilityFrom}
-          hasta={e.availabilityTo}
-          city={e.city}
-          country={e.country}
-          rooms={e.rooms}
-          price={e.price}
-        />
-      );
+// Función que realiza los filtros y la instanciación dinámica de las card con HotelInfo
+// Renderizado por filtros
+export function ListaHoteles(props) {
+  const hotelesFiltradoPorPais = hotelsData.filter((hotel) => {
+    if (props.country === "Todos") {
+      return true;
+    } else {
+      return hotel.country.toLowerCase() === props.country.toLowerCase();
     }
   });
-  return <div className="contenedor-section-hotel">{listaPorPrecio}</div>;
+  let renderizacionHoteles = hotelesFiltradoPorPais.map((hotel) => {
+    return (
+      <HotelInfo
+        photo={hotel.photo}
+        name={hotel.name}
+        description={hotel.description}
+        city={hotel.city}
+        country={hotel.country}
+        rooms={hotel.rooms}
+        price={hotel.price}
+      />
+    );
+  });
+  return <div className="contenedorHoteles">{renderizacionHoteles}</div>;
 }
 
 // ===========================================================

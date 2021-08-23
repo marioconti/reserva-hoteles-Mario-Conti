@@ -1,5 +1,5 @@
 /* Contenedor principal de la sección que contiene las cards*/
-.contenedor-section-hotel {
+.contenedorHoteles {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -60,8 +60,8 @@
 .rectangulos {
   display: flex;
   flex-wrap: wrap;
- align-items: center;
- /* margin-top: auto; */
+  align-items: center;
+  /* margin-top: auto; */
 }
 /* =========================================================== */
 /* Cada rectangulo con la info */

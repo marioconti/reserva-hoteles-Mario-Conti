@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { RenderizadoPorPrecio } from "../HotelInfo/HotelInfo";
+import { ListaHoteles } from "../HotelInfo/HotelInfo";
 import { Header } from "../Header/Header";
 import { Filtros } from "../Filtros/Filtros";
 // este import trae la fecha de hoy exportada como una const del arrayhoteles
@@ -16,15 +16,10 @@ export function Container() {
     <div className="App">
       <Header
         fechaDesde={fechaDesde}
-        setFechaDesde={setFechaDesde}
         fechaHasta={fechaHasta}
-        setFechaHasta={setFechaHasta}
         country={country}
-        setCountry={setCountry}
         price={price}
-        setPrice={setPrice}
         tamanio={tamanio}
-        setTamanio={setTamanio}
       />
       <Filtros
         fechaDesde={fechaDesde}
@@ -38,29 +33,12 @@ export function Container() {
         tamanio={tamanio}
         setTamanio={setTamanio}
       />
-      {/* <RenderizadoPorPais
+      <ListaHoteles
         fechaDesde={fechaDesde}
-        setFechaDesde={setFechaDesde}
         fechaHasta={fechaHasta}
-        setFechaHasta={setFechaHasta}
         country={country}
-        setCountry={setCountry}
         price={price}
-        setPrice={setPrice}
         tamanio={tamanio}
-        setTamanio={setTamanio}
-      /> */}
-      <RenderizadoPorPrecio
-        fechaDesde={fechaDesde}
-        setFechaDesde={setFechaDesde}
-        fechaHasta={fechaHasta}
-        setFechaHasta={setFechaHasta}
-        country={country}
-        setCountry={setCountry}
-        price={price}
-        setPrice={setPrice}
-        tamanio={tamanio}
-        setTamanio={setTamanio}
       />
     </div>
   );
