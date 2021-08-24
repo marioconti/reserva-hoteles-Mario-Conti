@@ -12,20 +12,64 @@ export function ListaHoteles(props) {
       return hotel.country.toLowerCase() === props.country.toLowerCase();
     }
   });
-  let renderizacionHoteles = hotelesFiltradoPorPais.map((hotel) => {
+  const hotelesFiltradoPorTamanioYPais = hotelesFiltradoPorPais.filter(
+    (hotel) => {
+      if (props.tamanio === "Todos") {
+        return true;
+      } else {
+        if (props.tamanio === "pequeño") {
+          return hotel.rooms <= 10;
+        } else if (props.tamanio === "mediano") {
+          return hotel.rooms > 10 && hotel.rooms < 20;
+        } else {
+          return hotel.rooms >= 20;
+        }
+      }
+    }
+  );
+  const hotelesFiltradoPorTamanioPaisYPrecio =
+    hotelesFiltradoPorTamanioYPais.filter((hotel) => {
+      if (props.price === "Todos") {
+        return true;
+      } else {
+        return hotel.price === parseFloat(props.price);
+      }
+    });
+
+  // const hotelesFiltradoPorTamanioPaisPrecioYFecha =
+  //   hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
+  //     // let ahora = new Date(desde);
+  //     // let milisegundosahora = ahora.valueOf();
+  //     // let mastarde = new Date(hasta);
+  //     // let milisegundosmastarde = mastarde.valueOf();
+  //   });
+
+  let renderizacionHoteles = hotelesFiltradoPorTamanioPaisYPrecio.map(
+    (hotel) => {
+      return (
+        <HotelInfo
+          photo={hotel.photo}
+          name={hotel.name}
+          fechaDesde={hotel.availabilityFrom}
+          fechaHasta={hotel.availabilityTo}
+          description={hotel.description}
+          city={hotel.city}
+          country={hotel.country}
+          rooms={hotel.rooms}
+          price={hotel.price}
+        />
+      );
+    }
+  );
+  if (renderizacionHoteles.length !== 0) {
+    return <div className="contenedorHoteles">{renderizacionHoteles}</div>;
+  } else {
     return (
-      <HotelInfo
-        photo={hotel.photo}
-        name={hotel.name}
-        description={hotel.description}
-        city={hotel.city}
-        country={hotel.country}
-        rooms={hotel.rooms}
-        price={hotel.price}
-      />
+      <p className="mensajeError">
+        No se encontraron hoteles con esta busqueda
+      </p>
     );
-  });
-  return <div className="contenedorHoteles">{renderizacionHoteles}</div>;
+  }
 }
 
 // ===========================================================
@@ -33,7 +77,7 @@ export function ListaHoteles(props) {
 export const HotelInfo = (props) => {
   // let fechaDesdeUnix = props.desde;
   const fechaDesde = () => {
-    let date = new Date(props.desde);
+    let date = new Date(props.fechaDesde);
     const options = {
       weekday: "long",
       year: "numeric",
@@ -44,7 +88,7 @@ export const HotelInfo = (props) => {
   };
 
   const fechaHasta = () => {
-    let date = new Date(props.hasta);
+    let date = new Date(props.fechaHasta);
     const options = {
       weekday: "long",
       year: "numeric",

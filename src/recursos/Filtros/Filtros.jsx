@@ -10,7 +10,15 @@ import "./Filtros.css";
 
 // Componente de los Filtros
 export const Filtros = (props) => {
-
+  // Boton limpiar
+  const BotonReiniciar = () => {
+    props.setCountry("Todos");
+    props.setTamanio("Todos");
+    props.setPrice("Todos");
+    props.setFechaDesde("");
+    props.setFechaHasta("");
+  };
+  /* =========================================================== */
   return (
     <div className="contenedor-filtros">
       <div className="filtroDesde">
@@ -30,7 +38,9 @@ export const Filtros = (props) => {
       <FiltroPais country={props.country} setCountry={props.setCountry} />
       <FiltroPrecio price={props.price} setPrice={props.setPrice} />
       <FiltroTamanio tamanio={props.tamanio} setTamanio={props.setTamanio} />
-      <div className="botonLimpiar">Limpiar</div>
+      <div onClick={BotonReiniciar} className="botonLimpiar">
+        Reiniciar
+      </div>
     </div>
   );
 };

@@ -15,11 +15,16 @@ export function Container() {
   return (
     <div className="App">
       <Header
-        fechaDesde={fechaDesde}
-        fechaHasta={fechaHasta}
-        country={country}
-        price={price}
-        tamanio={tamanio}
+       fechaDesde={fechaDesde}
+       setFechaDesde={setFechaDesde}
+       fechaHasta={fechaHasta}
+       setFechaHasta={setFechaHasta}
+       country={country}
+       setCountry={setCountry}
+       price={price}
+       setPrice={setPrice}
+       tamanio={tamanio}
+       setTamanio={setTamanio}
       />
       <Filtros
         fechaDesde={fechaDesde}

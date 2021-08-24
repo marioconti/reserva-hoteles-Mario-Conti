@@ -16,7 +16,7 @@ export const FiltroFechaDesde = (props) => {
       <input
         value={props.fechaDesde}
         onChange={handleSelect}
-        className="filtrosFechaDesde"
+        className="filtrosFechaDesde seleccionado"
         name=""
         type="date"
         id=""
@@ -38,7 +38,7 @@ export const FiltroFechaHasta = (props) => {
       <input
         value={props.fechaHasta}
         onChange={handleSelect}
-        className="filtrosFechaHasta"
+        className="filtrosFechaHasta seleccionado"
         name=""
         type="date"
         id=""
@@ -58,7 +58,7 @@ export const FiltroPais = (props) => {
       <select
         value={props.country}
         onChange={handleSelect}
-        className="filtrosPorPais"
+        className="filtrosPorPais seleccionado"
         name="Todos"
         id=""
       >
@@ -84,7 +84,7 @@ export const FiltroPrecio = (props) => {
       <select
         value={props.price}
         onChange={handleSelect}
-        className="filtrosPorPrecio"
+        className="filtrosPorPrecio seleccionado"
         name="Todos"
         id=""
       >
@@ -110,11 +110,11 @@ export const FiltroTamanio = (props) => {
       <select
         value={props.tamanio}
         onChange={handleSelect}
-        className="filtrosPorTamanio"
+        className="filtrosPorTamanio seleccionado"
         name="Todos"
         id=""
       >
-        <option value="todos">Tamaños</option>
+        <option value="Todos">Tamaños</option>
         <option value="pequeño">Pequeño</option>
         <option value="mediano">Mediano</option>
         <option value="grande">Grande</option>
