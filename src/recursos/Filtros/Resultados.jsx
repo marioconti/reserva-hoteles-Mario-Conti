@@ -10,6 +10,7 @@ export const FiltroFechaDesde = (props) => {
     // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
     // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
     props.setFechaDesde(fechaDesdeSeleccionada);
+    console.log("fecha desde seleccionada", fechaDesdeSeleccionada);
   };
   return (
     <div className="filtros">
@@ -31,7 +32,9 @@ export const FiltroFechaHasta = (props) => {
     const fechaHastaSeleccionada = evento.target.value;
     // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
     // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
+    
     props.setFechaHasta(fechaHastaSeleccionada);
+    console.log("fecha hasta seleccionada", fechaHastaSeleccionada);
   };
   return (
     <div className="filtros">

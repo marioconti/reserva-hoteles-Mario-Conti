@@ -36,15 +36,25 @@ export function ListaHoteles(props) {
       }
     });
 
-  // const hotelesFiltradoPorTamanioPaisPrecioYFecha =
-  //   hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
-  //     // let ahora = new Date(desde);
-  //     // let milisegundosahora = ahora.valueOf();
-  //     // let mastarde = new Date(hasta);
-  //     // let milisegundosmastarde = mastarde.valueOf();
-  //   });
+  const hotelesFiltradoPorTamanioPaisPrecioYFecha =
+    hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
+      let fechaDesdeSeleccionada = new Date(props.fechaDesde).getTime() / 1000;
+      let fechaHastaSeleccionada = new Date(props.fechaHasta).getTime() / 1000;
+      console.log("fecha desde Seleccionada", fechaDesdeSeleccionada);
+      console.log("fecha hasta Seleccionada", fechaHastaSeleccionada);
 
-  let renderizacionHoteles = hotelesFiltradoPorTamanioPaisYPrecio.map(
+      if (props.fechaDesde === "" && props.fechaHasta === "") {
+        return true;
+      } else if (
+        Math.ceil(hotel.availabilityFrom) / 1000 >= fechaDesdeSeleccionada &&
+        Math.ceil(hotel.availabilityTo) / 1000 <= fechaHastaSeleccionada
+      ) {
+        return hotel;
+      }
+    });
+  // FIXME: no funciona bien todavia el filtro. ya probe de todo. fijarme si están bien extraídas las fechas
+
+  let renderizacionHoteles = hotelesFiltradoPorTamanioPaisPrecioYFecha.map(
     (hotel) => {
       return (
         <HotelInfo
