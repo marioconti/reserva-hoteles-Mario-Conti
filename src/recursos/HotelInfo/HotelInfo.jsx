@@ -38,18 +38,16 @@ export function ListaHoteles(props) {
 
   const hotelesFiltradoPorTamanioPaisPrecioYFecha =
     hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
-      let fechaDesdeSeleccionada = new Date(props.fechaDesde).getTime() / 1000;
-      let fechaHastaSeleccionada = new Date(props.fechaHasta).getTime() / 1000;
-      console.log("fecha desde Seleccionada", fechaDesdeSeleccionada);
-      console.log("fecha hasta Seleccionada", fechaHastaSeleccionada);
-
-      if (props.fechaDesde === "" && props.fechaHasta === "") {
+      let fechaDesdeSeleccionada = new Date(props.fechaDesde).getTime();
+      let fechaHastaSeleccionada = new Date(props.fechaHasta).getTime();
+     
+      if (props.fechaDesde === "" || props.fechaHasta === "") {
         return true;
-      } else if (
-        Math.ceil(hotel.availabilityFrom) / 1000 >= fechaDesdeSeleccionada &&
-        Math.ceil(hotel.availabilityTo) / 1000 <= fechaHastaSeleccionada
-      ) {
-        return hotel;
+      } else {
+        return (
+          hotel.availabilityFrom > fechaDesdeSeleccionada &&
+          fechaHastaSeleccionada < hotel.availabilityTo
+        );
       }
     });
   // FIXME: no funciona bien todavia el filtro. ya probe de todo. fijarme si están bien extraídas las fechas
@@ -110,9 +108,14 @@ export const HotelInfo = (props) => {
 
   // esta funcion devuelve los signos $$$
   function mostrarPrice() {
-    let signoPesos = <i class="fas fa-dollar-sign"></i>;
+    let signoPesos = (
+      <div>
+        {" "}
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+    );
     let arrayPesos = [];
-    for (let i = 0; i < props.price; i++) {
+    for (let e = 0; e < props.price; e++) {
       arrayPesos.push(signoPesos);
     }
     return arrayPesos;
@@ -151,7 +154,7 @@ export const HotelInfo = (props) => {
       </div>
 
       <div className="boton">
-        <div className="boton-reserva">Reserva</div>
+        <div className="boton-reserva">Reservar</div>
       </div>
     </div>
   );

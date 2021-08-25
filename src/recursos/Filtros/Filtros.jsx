@@ -39,7 +39,7 @@ export const Filtros = (props) => {
       <FiltroPrecio price={props.price} setPrice={props.setPrice} />
       <FiltroTamanio tamanio={props.tamanio} setTamanio={props.setTamanio} />
       <div onClick={BotonReiniciar} className="botonLimpiar">
-        Reiniciar
+        Reiniciar <span>🗑</span>
       </div>
     </div>
   );

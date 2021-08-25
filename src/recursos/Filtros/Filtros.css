@@ -26,12 +26,12 @@
   font-size: 16px;
   border-radius: 5px;
   color: rgb(31, 30, 30);
+  font-weight: 500;
   cursor: pointer;
 }
 
 .seleccionado:hover{
-  background-color: #d6edfc;
-  border: solid 1px black;
+  border: solid 2px black;
 }
 
 .filtroDesde,
@@ -50,12 +50,22 @@
   padding: 6px 10px;
   font-size: 16px;
   border-radius: 5px;
-  color: white;
-  background-color: #0980cf;
-  border:solid 2px rgb(125, 132, 165);
+  color: black;
+  font-weight: 500;
+  background-color: #e7a84a;
+  border:solid 2px rgb(108, 113, 134);
   cursor: pointer;
+  display:flex;
+  align-items: center;
 }
 .botonLimpiar:hover {
-  background-color: #1b93e4;
+  background-color: #e4651b;
+}
+
+.botonLimpiar span {
+  font-size: 30px;
+  padding-left: 6px;
+  line-height: 25px;
+  color: rgb(66, 66, 66)
 }
 /* =========================================================== */

@@ -5,10 +5,7 @@ import "./Filtros.css";
 // Filtro por Desde
 export const FiltroFechaDesde = (props) => {
   const handleSelect = (evento) => {
-    // const tiempoUNIX = new Date(evento.target.value)
     const fechaDesdeSeleccionada = evento.target.value;
-    // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
-    // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
     props.setFechaDesde(fechaDesdeSeleccionada);
     console.log("fecha desde seleccionada", fechaDesdeSeleccionada);
   };
@@ -30,11 +27,7 @@ export const FiltroFechaDesde = (props) => {
 export const FiltroFechaHasta = (props) => {
   const handleSelect = (evento) => {
     const fechaHastaSeleccionada = evento.target.value;
-    // FIXME:cuando pongo:   const fechaDesdeSeleccionada = new Date(evento.target.value).getTime();
-    // deja de renderizarme en el calendario la fecha seleccionada. Como soluciono?
-    
     props.setFechaHasta(fechaHastaSeleccionada);
-    console.log("fecha hasta seleccionada", fechaHastaSeleccionada);
   };
   return (
     <div className="filtros">
