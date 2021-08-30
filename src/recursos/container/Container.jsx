@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import { ListaHoteles } from "../HotelInfo/HotelInfo";
 import { Header } from "../Header/Header";
 import { Filtros } from "../Filtros/Filtros";
-// este import trae la fecha de hoy exportada como una const del arrayhoteles
 
 export function Container() {
   // Declaración de estados globales

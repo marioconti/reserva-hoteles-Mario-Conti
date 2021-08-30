@@ -1,9 +1,9 @@
 /* Contenedor de los filtro */
 .contenedor-filtros {
-  width: 90%;
+  width: 100%;
   padding: 0px 40px;
   height: auto;
-  background-color: #1f9bed;
+  background-color: rgb(62,169,176);
   display: flex;
   align-items: center;
   justify-content: space-between;

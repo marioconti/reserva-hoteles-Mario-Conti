@@ -7,7 +7,6 @@ export const FiltroFechaDesde = (props) => {
   const handleSelect = (evento) => {
     const fechaDesdeSeleccionada = evento.target.value;
     props.setFechaDesde(fechaDesdeSeleccionada);
-    console.log("fecha desde seleccionada", fechaDesdeSeleccionada);
   };
   return (
     <div className="filtros">

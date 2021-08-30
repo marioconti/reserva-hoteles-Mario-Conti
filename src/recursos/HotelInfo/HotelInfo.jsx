@@ -40,7 +40,7 @@ export function ListaHoteles(props) {
     hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
       let fechaDesdeSeleccionada = new Date(props.fechaDesde).getTime();
       let fechaHastaSeleccionada = new Date(props.fechaHasta).getTime();
-     
+
       if (props.fechaDesde === "" || props.fechaHasta === "") {
         return true;
       } else {
@@ -50,7 +50,6 @@ export function ListaHoteles(props) {
         );
       }
     });
-  // FIXME: no funciona bien todavia el filtro. ya probe de todo. fijarme si están bien extraídas las fechas
 
   let renderizacionHoteles = hotelesFiltradoPorTamanioPaisPrecioYFecha.map(
     (hotel) => {
@@ -121,8 +120,12 @@ export const HotelInfo = (props) => {
     return arrayPesos;
   }
   // ===========================================================
-
-  // Aquí se hace el return, lo que devuelve nuestra fx. El HTML de la card
+  // mensaje de reserva hotel
+  let mensajeDeReserva = () => {
+    alert("HAS AÑADIDO UNA RESERVA, FELICITACIONES 🎉🎉");
+  };
+  // ===========================================================
+  //HTML de card genérica
   return (
     <div className="contenedor-HotelInfo">
       <img className="imagen-hotel" src={props.photo} alt="imagen hotel" />
@@ -154,7 +157,9 @@ export const HotelInfo = (props) => {
       </div>
 
       <div className="boton">
-        <div className="boton-reserva">Reservar</div>
+        <div onClick={mensajeDeReserva} className="boton-reserva">
+          Reservar
+        </div>
       </div>
     </div>
   );

@@ -27,10 +27,6 @@ export const Header = (props) => {
       return fechaHastaFiltrada;
     }
   };
-  //TODO: Ver como optimizar estas funciones
-
-  /* =========================================================== */
-
   /* =========================================================== */
   // Precio
   const nombrePrecio = () => {

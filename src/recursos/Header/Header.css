@@ -1,16 +1,25 @@
 /* Contenedor del Header */
 .contenedor-Header {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: flex;
-  background-color: rgb(1, 208, 177);
+  flex-wrap: wrap;
+  background-color: rgb(84, 84, 72);
   color: white;
   font-weight: 500;
 }
 /* =========================================================== */
 /* Titulo del header */
 .titulo-section {
-  margin: auto 5rem;
-  font-size: 2em;
+  margin: auto 9rem;
+  margin-top: 7rem;
+  font-size: 3em;
+}
+/* =========================================================== */
+/* Titulo del header */
+.contenedor-resultados {
+  margin-left:4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 /* =========================================================== */
