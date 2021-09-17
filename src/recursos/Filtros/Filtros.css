@@ -3,7 +3,7 @@
   width: 100%;
   padding: 0px 40px;
   height: auto;
-  background-color: rgb(62,169,176);
+  background-color: rgb(62, 169, 176);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,11 +26,11 @@
   font-size: 16px;
   border-radius: 5px;
   color: rgb(31, 30, 30);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.seleccionado:hover{
+.seleccionado:hover {
   border: solid 2px black;
 }
 
@@ -38,6 +38,7 @@
 .filtroHasta {
   display: flex;
   align-items: center;
+  font-weight: 600;
 }
 
 .filtrosFechaDesde,
@@ -51,11 +52,11 @@
   font-size: 16px;
   border-radius: 5px;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   background-color: #e7a84a;
-  border:solid 2px rgb(108, 113, 134);
+  border: solid 2px rgb(108, 113, 134);
   cursor: pointer;
-  display:flex;
+  display: flex;
   align-items: center;
 }
 .botonLimpiar:hover {
@@ -66,6 +67,27 @@
   font-size: 30px;
   padding-left: 6px;
   line-height: 25px;
-  color: rgb(66, 66, 66)
+  color: rgb(66, 66, 66);
 }
 /* =========================================================== */
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 600px) {
+  .contenedor-filtros {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filtroDesde,
+  .filtroHasta {
+    display: block;
+  }
+
+  .botonLimpiar {
+    margin-top: 10px;
+  }
+}

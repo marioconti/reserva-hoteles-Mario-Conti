@@ -1,17 +1,14 @@
 import React from "react";
 import "./Header.css";
-
 // Componente Header
 export const Header = (props) => {
   // Fechas
-  let fechaDesdeFiltrada = new Date(props.fechaDesde).toLocaleDateString(
-    "es-AR",
-    { timeZone: "UTC" }
-  );
-  let fechaHastaFiltrada = new Date(props.fechaHasta).toLocaleDateString(
-    "es-AR",
-    { timeZone: "UTC" }
-  );
+  let fechaDesdeFiltrada = new Date(
+    props.fechaDesde
+  ).toLocaleDateString("es-AR", { timeZone: "UTC" });
+  let fechaHastaFiltrada = new Date(
+    props.fechaHasta
+  ).toLocaleDateString("es-AR", { timeZone: "UTC" });
   /* =========================================================== */
   const mostrarFechaDesde = () => {
     if (fechaDesdeFiltrada === "Invalid Date") {
@@ -47,7 +44,7 @@ export const Header = (props) => {
 
   return (
     <div className="contenedor-Header">
-      <p className="titulo-section">Hotelandia</p>
+      <p className="titulo-section">HOLIDAYS</p>
       <div className="contenedor-resultados">
         <p className="resultadoBusqueda">Desde el: {mostrarFechaDesde()}</p>
         <p className="resultadoBusqueda">Desde el: {mostrarFechaHasta()}</p>

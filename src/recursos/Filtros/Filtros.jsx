@@ -4,7 +4,7 @@ import {
   FiltroPrecio,
   FiltroTamanio,
   FiltroFechaDesde,
-  FiltroFechaHasta,
+  FiltroFechaHasta
 } from "./Resultados";
 import "./Filtros.css";
 
@@ -39,7 +39,7 @@ export const Filtros = (props) => {
       <FiltroPrecio price={props.price} setPrice={props.setPrice} />
       <FiltroTamanio tamanio={props.tamanio} setTamanio={props.setTamanio} />
       <div onClick={BotonReiniciar} className="botonLimpiar">
-        Reiniciar <span>🗑</span>
+        Reiniciar
       </div>
     </div>
   );

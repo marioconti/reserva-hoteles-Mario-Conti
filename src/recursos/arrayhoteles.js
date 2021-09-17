@@ -15,7 +15,7 @@ export const hotelsData = [
     rooms: 11,
     city: "Buenos Aires",
     country: "Argentina",
-    price: 4,
+    price: 4
   },
   {
     slug: "sainte-jeanne",
@@ -28,7 +28,7 @@ export const hotelsData = [
     rooms: 23,
     city: "Mar del Plata",
     country: "Argentina",
-    price: 2,
+    price: 2
   },
   {
     slug: "entre-cielos",
@@ -41,7 +41,7 @@ export const hotelsData = [
     rooms: 16,
     city: "Mendoza",
     country: "Argentina",
-    price: 4,
+    price: 4
   },
   {
     slug: "huacalera",
@@ -54,7 +54,7 @@ export const hotelsData = [
     rooms: 32,
     city: "Jujuy",
     country: "Argentina",
-    price: 1,
+    price: 1
   },
   {
     slug: "merced-del-alto",
@@ -67,7 +67,7 @@ export const hotelsData = [
     rooms: 14,
     city: "Salta",
     country: "Argentina",
-    price: 2,
+    price: 2
   },
   {
     slug: "azur-real",
@@ -80,7 +80,7 @@ export const hotelsData = [
     rooms: 16,
     city: "Córdoba",
     country: "Argentina",
-    price: 1,
+    price: 1
   },
   {
     slug: "rincon-del-socorro",
@@ -93,7 +93,7 @@ export const hotelsData = [
     rooms: 11,
     city: "Corrientes",
     country: "Argentina",
-    price: 2,
+    price: 2
   },
   {
     slug: "luma-casa-de-montana",
@@ -106,7 +106,7 @@ export const hotelsData = [
     rooms: 8,
     city: "Villa La Angostura",
     country: "Argentina",
-    price: 2,
+    price: 2
   },
   {
     slug: "casa-turquesa",
@@ -119,7 +119,7 @@ export const hotelsData = [
     rooms: 9,
     city: "Río de Janeiro",
     country: "Brasil",
-    price: 3,
+    price: 3
   },
   {
     slug: "vila-da-santa",
@@ -132,7 +132,7 @@ export const hotelsData = [
     rooms: 19,
     city: "Buzios",
     country: "Brasil",
-    price: 3,
+    price: 3
   },
   {
     slug: "uxua-casa",
@@ -145,7 +145,7 @@ export const hotelsData = [
     rooms: 11,
     city: "Bahía",
     country: "Brasil",
-    price: 4,
+    price: 4
   },
   {
     slug: "ponta-dos-ganchos",
@@ -158,7 +158,7 @@ export const hotelsData = [
     rooms: 25,
     city: "Santa Catarina",
     country: "Brasil",
-    price: 4,
+    price: 4
   },
   {
     slug: "alto-atacama",
@@ -171,7 +171,7 @@ export const hotelsData = [
     rooms: 42,
     city: "San Pedro de Atacama",
     country: "Chile",
-    price: 4,
+    price: 4
   },
   {
     slug: "tierra-patagonia",
@@ -184,7 +184,7 @@ export const hotelsData = [
     rooms: 40,
     city: "Torres del Paine",
     country: "Chile",
-    price: 4,
+    price: 4
   },
   {
     slug: "vira-vira",
@@ -197,7 +197,7 @@ export const hotelsData = [
     rooms: 21,
     city: "Pucón",
     country: "Chile",
-    price: 4,
+    price: 4
   },
   {
     slug: "vik-chile",
@@ -210,7 +210,7 @@ export const hotelsData = [
     rooms: 22,
     city: "Millahue",
     country: "Chile",
-    price: 4,
+    price: 4
   },
   {
     slug: "casa-higueras",
@@ -223,7 +223,7 @@ export const hotelsData = [
     rooms: 20,
     city: "Valparaíso",
     country: "Chile",
-    price: 4,
+    price: 4
   },
   {
     slug: "campo-tinto",
@@ -236,6 +236,6 @@ export const hotelsData = [
     rooms: 4,
     city: "Colonia",
     country: "Uruguay",
-    price: 1,
-  },
+    price: 1
+  }
 ];

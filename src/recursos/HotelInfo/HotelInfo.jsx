@@ -27,17 +27,18 @@ export function ListaHoteles(props) {
       }
     }
   );
-  const hotelesFiltradoPorTamanioPaisYPrecio =
-    hotelesFiltradoPorTamanioYPais.filter((hotel) => {
+  const hotelesFiltradoPorTamanioPaisYPrecio = hotelesFiltradoPorTamanioYPais.filter(
+    (hotel) => {
       if (props.price === "Todos") {
         return true;
       } else {
         return hotel.price === parseFloat(props.price);
       }
-    });
+    }
+  );
 
-  const hotelesFiltradoPorTamanioPaisPrecioYFecha =
-    hotelesFiltradoPorTamanioPaisYPrecio.filter((hotel) => {
+  const hotelesFiltradoPorTamanioPaisPrecioYFecha = hotelesFiltradoPorTamanioPaisYPrecio.filter(
+    (hotel) => {
       let fechaDesdeSeleccionada = new Date(props.fechaDesde).getTime();
       let fechaHastaSeleccionada = new Date(props.fechaHasta).getTime();
 
@@ -49,7 +50,8 @@ export function ListaHoteles(props) {
           fechaHastaSeleccionada < hotel.availabilityTo
         );
       }
-    });
+    }
+  );
 
   let renderizacionHoteles = hotelesFiltradoPorTamanioPaisPrecioYFecha.map(
     (hotel) => {
@@ -89,7 +91,7 @@ export const HotelInfo = (props) => {
       weekday: "long",
       year: "numeric",
       month: "long",
-      day: "numeric",
+      day: "numeric"
     };
     return `Desde el ${date.toLocaleDateString(undefined, options)}`;
   };
@@ -100,7 +102,7 @@ export const HotelInfo = (props) => {
       weekday: "long",
       year: "numeric",
       month: "long",
-      day: "numeric",
+      day: "numeric"
     };
     return `Hasta el ${date.toLocaleDateString(undefined, options)}`;
   };
